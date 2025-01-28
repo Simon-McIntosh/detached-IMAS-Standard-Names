@@ -1,0 +1,19 @@
+site_name: "Fusion Conventions: Standard Names"
+plugins:
+  - macros
+  - data:
+      sources:
+        standardnames: standardnames.yml
+watch:
+  - standardnames.yml
+theme:
+  name: material
+
+# Enable latex/math notation
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
