@@ -46,7 +46,7 @@ Standard names may be derived from other standard names (represented here by X,
 Y and Z) by the following rules. Successive transformations may be applied.
 Transformations may alter the units as shown.
 
-TODO
+{{ read_csv('transformations.csv') }}
 
 ## Generic names
 
@@ -55,4 +55,8 @@ other standard names, although they are themselves too general to be chosen as
 standard names. They are recorded here for reference only. *These are not
 standard names*.
 
-TODO
+{{ read_csv('generic_names.csv') }}
+
+[^1]:
+    Temperature of plasma species (e.g. `electron_temperature`) is expressed in
+    `eV`, other temperatures (e.g. `wall_temparature`) are given in `K`.
