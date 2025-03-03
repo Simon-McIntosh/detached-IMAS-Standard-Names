@@ -1,23 +1,25 @@
 on:
-  issues:
-    types: [labeled]
+  workflow_call:
+
+#permissions:
+#  contents: write
+#  pull-requests: write
 
 jobs:
-
   label-issue:
     uses: ./.github/workflows/label-issue.yml
 
-  merge-issue:
-    if: ${{ github.event.label.name == 'merge' }}
+  commit-issue:
     runs-on: ubuntu-latest
     needs: label-issue
 
     steps:
+      - uses: actions/checkout@v3
 
       # - run: node submission.js
 
       # - run: yarn
-      
+
       # - run: node ./update.js
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,19 +32,21 @@ jobs:
       #       git add README.md data.json
       #       git diff-index --quiet HEAD || git commit -m "Add new list item"
 
-      # - run: git push
+      - run: git push
+      - name: Echo dir
+        run: echo -e $(ls -ltr)
 
-      - name: Check labels 
-        if: ${{ contains(needs.label-issue.outputs.update, 'Success') && contains(github.event.issue.labels.*.name, 'needswork') }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
-        run: |
-          gh issue edit $ISSUE_URL --remove-label "merge"
-          gh issue comment $ISSUE_URL --body "Remove `needswork` label to merge."
+      - name: Create PR
+        id: create_pr
+        if: ${{ needs.label-issue.outputs.commit-flag == 'true' }}
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: develop
+          title: Add **${{ needs.label-issue.outputs.standard-name }}** to standardnames.yml
+          body: ${{ needs.label-issue.outputs.commit-message }}
 
       - name: Close issue
-        if: ${{ contains(needs.label-issue.outputs.update, 'Success')  && !contains(github.event.issue.labels.*.name, 'needswork') }}
+        if: steps.create_pr.outcome == 'success'
         uses: peter-evans/close-issue@v1
         with:
           comment: Merged **${{ needs.label-issue.outputs.standard-name }}** with standardnames.yml.
