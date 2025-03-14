@@ -1,0 +1,16 @@
+name: check-branch
+description: Check branch, create if it does not exist.
+
+inputs:
+  branch-name:
+    description: "The proposed branch name."
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        if ! git show-ref --quiet refs/heads/${{ inputs.branch-name }}; then
+          git branch ${{ inputs.branch-name }}
+        fi
