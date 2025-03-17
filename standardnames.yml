@@ -38,3 +38,9 @@ plasma_current:
   tags:
   alias:
   overwrite: no
+coil_current:
+  units: ampere
+  documentation: doc
+  tags:
+  alias:
+  overwrite: no
