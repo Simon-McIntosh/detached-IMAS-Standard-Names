@@ -62,3 +62,9 @@ a_time:
   tags:
   alias:
   overwrite: no
+second_time:
+  units: s
+  documentation: docs
+  tags:
+  alias:
+  overwrite: no
