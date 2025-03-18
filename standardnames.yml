@@ -11,8 +11,7 @@ radial_distance:
 vertical_distance:
   units: m
   tags: cylindrical-coordinates cartesian-cooordinates
-  documentation:
-    Vertical distance to the horizontal reference plane of the coordinate
+  documentation: Vertical distance to the horizontal reference plane of the coordinate
     system.
 poloidal_flux:
   units: Wb
@@ -33,3 +32,9 @@ poloidal_flux:
     Illustration of an integration surface (blue) to calculate the poloidal
     flux and the flux surface (grey). By definition, all points on the flux
     surface have the same value for the poloidal flux.
+coil_current:
+  units: A
+  documentation: docs
+  tags:
+  alias:
+  overwrite: no
