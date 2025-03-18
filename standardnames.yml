@@ -68,3 +68,9 @@ second_time:
   tags:
   alias:
   overwrite: no
+plasma_current:
+  units: A
+  documentation: docs
+  tags:
+  alias:
+  overwrite: no
