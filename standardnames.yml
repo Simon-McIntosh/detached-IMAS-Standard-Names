@@ -74,3 +74,9 @@ plasma_current:
   tags:
   alias:
   overwrite: no
+no_units:
+  units:
+  documentation: docs
+  url: https://github.com/Simon-McIntosh/IMAS-Standard-Names/issues/333
+  tags:
+  alias:
