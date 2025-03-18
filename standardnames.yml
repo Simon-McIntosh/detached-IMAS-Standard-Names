@@ -38,3 +38,9 @@ coil_current:
   tags:
   alias:
   overwrite: no
+plasma_current_density:
+  units: A/m²
+  documentation: docs
+  tags:
+  alias:
+  overwrite: no
