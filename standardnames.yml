@@ -1,9 +1,9 @@
 time:
   units: s
-  tags: time
-  documentation: |
-    Number of elapsed seconds. Typically this expresses the number of
-    seconds since the start of the pulse.
+  documentation: docs
+  url:
+  tags:
+  alias:
 radial_distance:
   units: m
   tags: cylindrical-coordinates
