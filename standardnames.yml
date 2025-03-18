@@ -56,3 +56,9 @@ yet_another_time:
   tags:
   alias:
   overwrite: no
+a_time:
+  units: s
+  documentation: docs
+  tags:
+  alias:
+  overwrite: no
