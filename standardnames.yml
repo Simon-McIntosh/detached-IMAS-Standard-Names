@@ -1,7 +1,7 @@
 time:
   units: s
   documentation: docs
-  url:
+  url: https://github.com/Simon-McIntosh/IMAS-Standard-Names/issues/332
   tags:
   alias:
 radial_distance:
