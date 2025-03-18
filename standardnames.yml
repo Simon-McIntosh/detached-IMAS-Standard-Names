@@ -44,3 +44,9 @@ plasma_current_density:
   tags:
   alias:
   overwrite: no
+another_time:
+  units: s
+  documentation: docs
+  tags:
+  alias:
+  overwrite: no
