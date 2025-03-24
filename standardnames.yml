@@ -33,9 +33,10 @@ poloidal_flux:
     flux and the flux surface (grey). By definition, all points on the flux
     surface have the same value for the poloidal flux.
 plasma_current:
-  documentation: docs
+  documentation: docss
   units: A
   links:
   - https://github.com/Simon-McIntosh/IMAS-Standard-Names/issues/345
   - https://github.com/Simon-McIntosh/IMAS-Standard-Names/issues/345
   - https://github.com/Simon-McIntosh/IMAS-Standard-Names/issues/345
+  - https://github.com/Simon-McIntosh/IMAS-Standard-Names/issues/348
